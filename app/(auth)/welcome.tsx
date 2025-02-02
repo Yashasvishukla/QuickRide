@@ -1,5 +1,5 @@
 import CustomButton from "@/components/customButton";
-import { images, onboarding } from "@/constants/index";
+import { onboarding } from "@/constants/index";
 import { router } from "expo-router";
 import { useRef, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
@@ -26,10 +26,10 @@ const Onboarding = () => {
         ref={swiperRef}
         loop={false}
         dot={
-          <View className="w-[32px] h-[4px] mx-1 bg-[#E2E8F0] rounded-full" />
+          <View className="w-[35px] h-[4px] mx-1 bg-[#E2E8F0] rounded-full" />
         }
         activeDot={
-          <View className="w-[32px] h-[4px] mx-1 bg-[#0286FF] rounded-full" />
+          <View className="w-[35px] h-[4px] mx-1 bg-[#0286FF] rounded-full" />
         }
         onIndexChanged={(index) => setActiveIndex(index)}
       >
@@ -56,9 +56,9 @@ const Onboarding = () => {
         onPress={() =>
           isLastSlide
             ? router.replace("/(auth)/sign-up")
-            : swiperRef.current?.scrollBy(1)
+            : swiperRef.current?.scrollBy(1, true)
         }
-        className="w-11/12 mt-10 mb-5 h-14"
+        className="w-10/12 mt-10 mb-5 h-14"
       ></CustomButton>
     </SafeAreaView>
   );
